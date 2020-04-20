@@ -6,8 +6,12 @@ public class Main {
         Board board=new Board();
         board.setPosition(0,2,'X');
         board.setPosition(0,2,'o');
-        board.setPosition(2,0,'o');
+        board.setPosition(1,0,'o');
+        board.setPosition(1,1,'o');
+        board.setPosition(1,2,'o');
         board.displayBoard();
+        boolean test= board.checkBoard();
+        System.out.println(test);
 
     }
 }

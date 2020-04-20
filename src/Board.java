@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Board {
@@ -39,8 +38,51 @@ public class Board {
      * @return Returns false if there isn't a winner, true if there is a winner
      */
     public boolean checkBoard() {
+        int i,j,winner=0,checkValue;
 
-        return true;
+        //Checks if there was a winner horizontally in the board
+        for (j=0;j<3;j++) {
+            checkValue=0;
+            for (i=0;i<3;i++) {
+                checkValue=board[i][j]+checkValue;
+            }
+            if (checkValue==3) {
+                winner=1;
+                break;
+            } else if (checkValue==12) {
+                winner=4;
+                break;
+            }
+
+        }
+        //Checks if there's a winner vertically in the board. Skips it if there is already a winner
+        if (winner==0) {
+            for (i = 0; i < 3; i++) {
+                checkValue = 0;
+                for (j = 0; j < 3; j++) {
+                    checkValue = board[i][j] + checkValue;
+                }
+                if (checkValue == 3) {
+                    winner = 1;
+                    break;
+                } else if (checkValue == 12) {
+                    winner = 4;
+                    break;
+                }
+            }
+        }
+
+        if (winner==1) {
+            System.out.println("X wins! \nHere is the final board!");
+            this.displayBoard();
+            return true;
+        }
+        if (winner==4) {
+            System.out.println("O wins! \nHere is the final board!");
+            this.displayBoard();
+            return true;
+        }
+        return false;
     }
 
     /**
