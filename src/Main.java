@@ -2,10 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("Hello World");
-        System.out.println("Hello World 2");
-        System.out.println("Hello World 3");
-        System.out.println("test4");
-        System.out.println("Branch 2");
+        System.out.println("Start of a Tic Tac Toe Command Line Game");
+
     }
 }
