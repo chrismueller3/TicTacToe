@@ -5,6 +5,7 @@ public class Board {
     /**
      * The board variable itself.
      * The first index is the x axis, while the second is the y axis. Assumes 0,0 is at the bottom left corner.
+     * X is represented by a 1, while O is represented by a 4.
      */
     private int[][] board=new int[3][3];
 
@@ -32,11 +33,27 @@ public class Board {
         return true;
     }
 
+    /**
+     * Checks if the position entered has a value besides 0.
+     * @param x x co-ord of the location
+     * @param y y co-ord of the location
+     * @return
+     */
     public boolean CheckPosition(int x, int y) {
         if (board[x][y]!=0) {
             return false;
         }
         return true;
+    }
+
+    /**
+     * Returns the value at the location entered
+     * @param x x co-ord of the location
+     * @param y y co-ord of the location
+     * @return
+     */
+    public int GetPosition(int x, int y) {
+        return board[x][y];
     }
 
     /**
