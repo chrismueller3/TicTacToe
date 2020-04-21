@@ -32,6 +32,13 @@ public class Board {
         return true;
     }
 
+    public boolean CheckPosition(int x, int y) {
+        if (board[x][y]!=0) {
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Checks the board to see if anybody has won that game.
      * Displays the winning board
