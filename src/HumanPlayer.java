@@ -6,6 +6,9 @@ public class HumanPlayer implements Player {
     char player;
     Scanner keyboard = new Scanner(System.in);
     @Override
+    /**
+     * Not really used, this method is more important for the computer player class
+     */
     public void setXO(char c) {
         player=c;
     }
@@ -34,7 +37,7 @@ public class HumanPlayer implements Player {
                 System.err.println("Location occupied, try again");
             }
         }
-        return 0;
+        return location;
     }
 
     private int setLocation() {

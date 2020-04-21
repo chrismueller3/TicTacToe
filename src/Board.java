@@ -77,8 +77,21 @@ public class Board {
                 winner=4;
                 break;
             }
-
         }
+        //Bit that checks the diagonals. Bit crude, no loops used.
+        checkValue=board[0][0]+board[1][1]+board[2][2];
+        if (checkValue==3) {
+            winner=1;
+        } else if (checkValue==12) {
+            winner=4;
+        }
+        checkValue=board[0][2]+board[1][1]+board[2][0];
+        if (checkValue==3) {
+            winner=1;
+        } else if (checkValue==12) {
+            winner=4;
+        }
+
         //Checks if there's a winner vertically in the board. Skips it if there is already a winner
         if (winner==0) {
             for (i = 0; i < 3; i++) {
