@@ -93,29 +93,35 @@ public class ComputerPlayer implements Player {
         return location;
     }
 
+    /**
+     * Checks the diagonals of the board. Returns -1 if there is nothing there, otherwise it returns the location to place a value.
+     * Quite a crude method at the moment, it might be improved later.
+     * @param board
+     * @return Location to place value.
+     */
     private int checkDiagonal(Board board) {
         int checkValue,location=-1;
         checkValue=board.GetPosition(0,0)+board.GetPosition(1,1)+board.GetPosition(2,2);
         if (checkValue==2||checkValue==8) {
-            if (board.CheckPosition(0,0)==false) {
+            if (board.CheckPosition(0,0)==true) {
                 return 0;
             }
-            if (board.CheckPosition(1,1)==false) {
+            if (board.CheckPosition(1,1)==true) {
                 return 11;
             }
-            if (board.CheckPosition(2,2)==false) {
+            if (board.CheckPosition(2,2)==true) {
                 return 22;
             }
         }
         checkValue=board.GetPosition(0,2)+board.GetPosition(1,1)+board.GetPosition(2,0);
         if (checkValue==2||checkValue==8) {
-            if (board.CheckPosition(0,2)==false) {
+            if (board.CheckPosition(0,2)==true) {
                 return 02;
             }
-            if (board.CheckPosition(1,1)==false) {
+            if (board.CheckPosition(1,1)==true) {
                 return 11;
             }
-            if (board.CheckPosition(2,0)==false) {
+            if (board.CheckPosition(2,0)==true) {
                 return 20;
             }
         }

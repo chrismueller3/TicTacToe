@@ -9,12 +9,27 @@ public class Board {
      */
     private int[][] board=new int[3][3];
 
+    /**
+     * Default Constructor
+     * Fills the entire board with zeros.
+     */
     public Board() {
         Arrays.fill(board[0],0);
         Arrays.fill(board[1],0);
         Arrays.fill(board[2],0);
     }
 
+    /**
+     * Sets a position on the board based on the x,y value entered.
+     * Sets it according to the value of c.
+     * If there is a value at that location, it returns false.
+     * If the character c isn't x/X or o/O, it returns false.
+     * Otherwise it returns true.
+     * @param x
+     * @param y
+     * @param c
+     * @return
+     */
     public boolean setPosition(int x, int y, char c) {
 
         if (board[x][y]!=0) {
@@ -132,6 +147,25 @@ public class Board {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * Checks if the board is full of values
+     * @return True if it is full, false otherwise
+     */
+    public boolean BoardFull() {
+        int i,j;
+        for (i=0;i<3;i++) {
+            for(j=0;j<3;j++) {
+                if (board[i][j]==0) {
+                    return false;
+                }
+            }
+
+        }
+        System.out.println("Board is full");
+        this.displayBoard();
+        return true;
     }
 
     /**
